@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>editable-table demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../editable-table.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      .vertical-section-container { width: 95%; max-width: unset; }
+      editable-table, paper-button[raised] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic editable-table demo</h3>
+      <demo-snippet>
+        <template>
+          <editable-table id="table1" data-src="taco.json" caption="Is it a sandwich? Food classification chart." enable-responsive></editable-table>
+          <p><paper-button onclick="alert(document.getElementById('table1').getData())" raised>Get Data</paper-button></p>
+        </template>
+      </demo-snippet>
+      <h3>Editable-table demo, bordered, striped, and condensed</h3>
+      <demo-snippet>
+        <template>
+          <editable-table id="table2" data-src="taco.json" caption="Is it a sandwich? Food classification chart." enable-styles bordered condensed striped ></editable-table>
+          <p><paper-button onclick="alert(document.getElementById('table2').getData())" raised>Get Data</paper-button></p>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
